@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900">
+    <div class = "text-center  m-4">
+        <h1 class=" text-3xl text-zinc-100">Create a new user</h1>
+        <p id="currentTime" class="text-sm  text-zinc-400"></p>
+        <br><hr>
+        
+        <div class="text-left mt-6">
+            <a href="/users" method="get" class="  text-xs text-indigo-400 mx-4 rounded-lg hover:text-indigo-200">Show user details</a>
+        <form  action="/create" method="post" class="mx-4 w-min" type="submit " >
+            <label class="text-zinc-100   py-2 text-xl">Name</label>
+            <input id="name" name="name" placeholder="Enter name"class=" rounded-lg p-1 mb-3  px-3 min-w-72"/>
+            <label class="text-zinc-100 my-2 text-xl">Email</label>
+            <input id="email" name="email" placeholder="Enter email"class=" rounded-lg p-1 mb-3 px-3 min-w-72"/>
+            <label class="text-zinc-100 py-2 text-xl">Age </label>
+            <input id="age" name="age" placeholder="Enter Age"class=" rounded-lg p-1 mb-3 px-3 min-w-72"/>
+            <label class="text-zinc-100 py-2 text-xl">Image</label>
+            <input id="imageurl" name="imageurl" placeholder="Paste Url here"class=" rounded-lg p-1 mb-3 px-3 min-w-72"/>
+            <button id="button" onclick="alert('User Created')" type="submit" class= "bg-blue-500 text-zinc-100 px-3 p-1 my-1 rounded-lg hover:bg-blue-400">Create user</button>
+        </form> 
+        </div>
+        
+        
+    </div>
+    
+    <script>
+        function showTime() {
+            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+        }
+        showTime();
+        setInterval(function () {
+            showTime();
+        }, 1000);
+    </script>
+</body>
+</html>

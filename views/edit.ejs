@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" bg-zinc-900">
+    <div class="text-center text-zinc-100">
+        <h1 class="text-4xl mt-4 ">Update the user</h1>
+        <p id="currentTime" class="text-sm  text-zinc-400"></p>
+        <br><hr><br>
+        <div class="text-start text-sm hover:text-blue-500 text-indigo-500 ml-4">
+            <a  href="/users">Back to user's pages</a>
+        </div>
+        <div class = " text-left flex flex-wrap gap-2.5  m-4 mt-5">
+            <div id="card" class="user w-72 rounded-lg text-left text-zinc-300  bg-zinc-500  p-3">
+                <div class="w-full h-72 overflow-hidden rounded-md " >
+                     <img src="<%=users.imageurl%>" class="w-full h-full object-cover object-top" alt="hello bachooooooooooooooooooooooooooooooo" >
+                </div>
+        
+            <form action="/update/<%=users.id%>" method="post">
+                <div class="w-min">
+                <label class="text-zinc-300 text-xs">Name</label>
+                <input id="name" name="name" value="<%=users.name%>" class=" rounded-lg text-zinc-900 w-64 px-2"/>
+                </div>
+                <div class="w-min">
+                <label class="text-zinc-300  text-xs">Email</label>
+                <input id="email" name="email" value="<%=users.email%>" class=" rounded-lg text-zinc-900 w-64 px-2"/>
+                </div>
+                <div class="w-min">
+                <label class="text-zinc-300 text-xs">Age </label>
+                <input id="age" name="age" value="<%=users.age%>" class=" rounded-lg text-zinc-900 w-64 px-2"/>
+                </div>
+                <div class="w-min">
+                <label class="text-zinc-300  text-xs">Image</label>
+                <input id="imageurl" name="imageurl" value="<%=users.imageurl%>" class=" rounded-lg w-64 px-2 text-zinc-900 "/>
+                </div>
+                <div class="flex gap-3 mt-2">
+                    <button type="submit" onclick="alert('User updated')" class="text-zinc-200 bg-blue-500 px-2 rounded-lg" href="/edit/<%=users.id%>" >Update</button>
+                    <a class="text-red-500" href="/delete/<%=users.id%>" method="post">Delete user</a>
+                </div>
+            </form>
+
+           </div>
+        </div>
+
+    <script>
+        function showTime() {
+            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+        }
+        showTime();
+        setInterval(function () {
+            showTime();
+        }, 1000);
+    </script>
+    
+</body>
+</html>

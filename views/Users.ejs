@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" text-center bg-zinc-900">
+    <h1 class=" mt-5 text-zinc-100 text-4xl">All User's</h1>
+    <p id="currentTime" class="text-sm  text-zinc-400"></p>
+    <br><hr><br>
+    <div class="text-start text-sm text-blue-500 ml-4">
+    <a  href="/">Back to homepage</a>
+    </div>
+    <div class = " flex flex-wrap gap-2.5  m-4 mt-7">
+        <%if(users.length>0){%>
+        <% users.forEach((val)=>{%>
+        <div class="user w-72 rounded-lg text-left text-zinc-300  bg-zinc-500  p-3">
+            <div class="w-full h-72 overflow-hidden rounded-md " >
+                 <img src="<%=val.imageurl%>" class="w-full h-full object-cover object-top" alt="hello bachooooooooooooooooooooooooooooooo" >
+            </div>
+        <h1><%=val.name%></h1>
+        <h1 class="text-zinc-400 text-sm"><%=val.email%></h1>
+        <h1 ><%=val.age%></h1>
+        <div class="flex gap-3 mt-2">
+            <a class="text-zinc-200" href="/edit/<%=val.id%>" >Edit User</a>
+            <a class="text-red-500" href="/delete/<%=val.id%>" method="post">Delete user</a>
+        </div>
+       </div>
+       <%})%>
+       <%}else{%>
+        <h3 class="text-zinc-100">Kuch add to karle bhai</h3>
+       <%}%>
+
+
+    </div>
+    <script>
+        function showTime() {
+            document.getElementById('currentTime').innerHTML = new Date().toUTCString();
+        }
+        showTime();
+        setInterval(function () {
+            showTime();
+        }, 1000);
+    </script>
+</body>
+</html>
