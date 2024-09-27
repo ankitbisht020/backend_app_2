@@ -9,6 +9,8 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.set('view engine','ejs');
+app.set('views', path.join(__dirname, 'your_views_folder'));
+
 
 app.get('/', (req, res) => {
     console.log(`app started on port : ${process.env.PORT}`);
