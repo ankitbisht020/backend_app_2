@@ -3,6 +3,8 @@ const app =express();
 const user =require('./controller/monogose')
 const fs =require('fs'); 
 require('dotenv').config()
+const path = require('path');
+
  
 const PORT = process.env.PORT || 3005;
 app.use(express.static('public'));
