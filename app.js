@@ -66,7 +66,9 @@ app.get('/edit/:id',async(req,res)=>{
     
 })
 
-app.listen((process.env.PORT),()=>{
+app.listen((PORT),()=>{
     console.log(`app startded on port:${process.env.PORT}`);
 }
 );
+
+module.exports =app;
