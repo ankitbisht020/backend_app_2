@@ -1,12 +1,12 @@
 {
   "name": "backend_app_2",
   "version": "1.0.0",
-  "description": "",
+  "description": "An Express app with EJS for user data and image upload",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js "
+    "start": "node app.js", 
+    "dev": "nodemon app.js",
+    "build": "" 
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,6 @@
     "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.21.0",
-    "mongoose": "^8.6.3",
-    "moongoose": "^0.0.5"
+    "mongoose": "^8.6.3"
   }
 }

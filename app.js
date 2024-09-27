@@ -1,16 +1,17 @@
 const express = require('express');
 const app =express();
-const user =require('./monogose')
+const user =require('./controller/monogose')
 const fs =require('fs'); 
 require('dotenv').config()
-
+ 
+const PORT = process.env.PORT || 3005;
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.set('view engine','ejs');
 
 app.get('/', (req, res) => {
-    console.log(`app started on port : ${process.env.port}`);
+    console.log(`app started on port : ${process.env.PORT}`);
     res.render('index.ejs');
 });
 
@@ -65,7 +66,7 @@ app.get('/edit/:id',async(req,res)=>{
     
 })
 
-app.listen((process.env.port),()=>{
-    console.log(`app startded on port:${process.env.port}`);
+app.listen((process.env.PORT),()=>{
+    console.log(`app startded on port:${process.env.PORT}`);
 }
 );
